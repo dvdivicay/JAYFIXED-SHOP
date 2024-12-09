@@ -30,10 +30,10 @@ function displayCartItems() {
 
 function updateCartTotal() {
     const total = cartItems.reduce((sum, item) => {
-        const price = parseFloat(item.price.replace('₱', ''));
+        const price = parseFloat(item.price.replace('$', ''));
         return sum + price;
     }, 0);
-    document.getElementById('cartTotal').textContent = `Total: ₱${total.toFixed(2)}`;
+    document.getElementById('cartTotal').textContent = `Total: $${total.toFixed(2)}`;
 }
 
 function removeItem(index) {
