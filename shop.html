@@ -46,8 +46,7 @@
 
         <button class="cart-btn">
           <ion-icon name="bag" aria-hidden="true"></ion-icon>
-
-          <span class="span">Cart (0)</span>
+          <span class="span" id="cartCount">Cart (0)</span>
         </button>
 
         <a href="#" class="btn">Contact Us</a>
@@ -58,10 +57,313 @@
       </button>
 
     </div>
+    
   </header>
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+      <span class="close-cart">&times;</span>
+      <h2>Shopping Cart</h2>
+      <div id="cartItems" class="cart-items">
+        <!-- Cart items will be added here dynamically -->
+      </div>
+      <div class="cart-total">
+        <h3>Total: ₱<span id="cartTotal">0</span></h3>
+        <button id="checkoutBtn" class="btn btn-primary">Checkout</button>
+        <button id="resetCartBtn" class="btn btn-primary">Reset Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="category-section">
+      <div class="container">
+        <div class="category-buttons">
+          <button class="category-btn active" data-category="all">All Products</button>
+          <button class="category-btn" data-category="dropbars">Dropbars</button>
+          <button class="category-btn" data-category="framesets">Framesets</button>
+          <button class="category-btn" data-category="forks">Forks</button>
+          <button class="category-btn" data-category="chains">Chains</button>
+          <button class="category-btn" data-category="chainrings">Chainrings</button>
+          <button class="category-btn" data-category="wheelsets">Wheelsets</button>
+          <button class="category-btn" data-category="cranksets">Cranksets</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <div class="container">
+        <div class="products-grid">
+          <!-- Product Card Template -->
+          <div class="product-card" data-category="framesets">
+            <div class="product-image">
+              <img src="./assets/images/look895.png" alt="Product Name">
+              <div class="product-overlay">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Look 895 Carbon</h3>
+              <p class="product-price">$4,000.00</p>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="dropbars">
+            <div class="product-image">
+              <img src="./assets/images/blackincdropbar.png" alt="Product Name">
+              <div class="product-overlay">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Black Inc Integ. Dropbar</h3>
+              <p class="product-price">$300.00</p>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="framesets">
+            <div class="product-image">
+              <img src="./assets/images/cervelogold.png" alt="Product Name">
+              <div class="product-overlay">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Cervelo S5 Gold</h3>
+              <p class="product-price">$5,560.00</p>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="framesets">
+            <div class="product-image">
+              <img src="./assets/images/vigorelli.png" alt="Product Name">
+              <div class="product-overlay">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Cinelli Vigorelli</h3>
+              <p class="product-price">$170.00</p>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="chain">
+            <div class="product-image">
+              <img src="./assets/images/izumichain.png" alt="Product Name">
+              <div class="product-overlay">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info" >
+              <h3 class="product-title">Izumi Chain (Silver)</h3>
+              <p class="product-price">$220.00</p>
+            </div>
+          </div>
+
+          <div class="product-card"data-category="dropbars">
+            <div class="product-image">
+              <img src="./assets/images/aerostem.png" alt="Product Name">
+              <div class="product-overlay">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Black Inc Dropbar Extended</h3>
+              <p class="product-price">$850.00</p>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="chainrings">
+            <div class="product-image">
+              <img src="./assets/images/suginozen.png" alt="Product Name">
+              <div class="product-overlay">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Sugino Zen Chainring</h3>
+              <p class="product-price">$270.00</p>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="wheelsets">
+            <div class="product-image">
+              <img src="./assets/images/ffwd5t.png" alt="Product Name">
+              <div class="product-overlay">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">FFWD Carbon 5 Spokes</h3>
+              <p class="product-price">$450.00</p>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="wheelsets">
+            <div class="product-image">
+              <img src="./assets/images/trispoke.jpeg" alt="Product Name">
+              <div class="product-overlay">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Evolve Tri-Spoke</h3>
+              <p class="product-price">$2200.00</p>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="framesets">
+            <div class="product-image">
+              <img src="./assets/images/pizzr2.png" alt="Product Name">
+              <div class="product-overlay">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Pizzicato R2</h3>
+              <p class="product-price">$350.00</p>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="framesets">
+            <div class="product-image">
+              <img src="./assets/images/cervelos5.png" alt="Product Name">
+              <div class="product-overlay">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Cervelo S5</h3>
+              <p class="product-price">$5500.00</p>
+            </div>
+          </div>
+
+          <div class="product-card" data-category="cranksets">
+            <div class="product-image">
+              <img src="./assets/images/pizzht2crankset.jpg" alt="Product Name">
+              <div class="product-overlay">
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Pizz Aero HT2 Crankset</h3>
+              <p class="product-price">$170.00</p>
+            </div>
+          </div>
+          <!-- Repeat product-card div for more products -->
+        </div>
+      </div>
+    </section>
+    
+  </main>
   
+
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/LOGO.png" width="132" height="27" loading="lazy" alt="shoppie home">
+          </a>
+
+          <p class="footer-text">
+            Whether you're a seasoned rider or just jumping into the world of fixies, we’ve got the bikes, parts, and gear to get you cruising in style.
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link" onclick="window.open('https://www.facebook.com/JRASOXS/', '_blank');">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link" onclick="window.open('https://www.instagram.com/heyy.jay23/', '_blank');">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link" onclick="window.open('https://www.tiktok.com/@dvdivicay23?lang=en', '_blank');">
+                <ion-icon name="logo-tiktok"></ion-icon>
+              </a>
+            </li>
+
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title title">Contact info</p>
+
+            <address class="footer-text">
+              Labangon, Cebu City <br>
+              Philippines
+            </address>
+          </li>
+
+          <li>
+            <a href="mailto:dvdivicay23@gmail.com" class="email">dvdivicay23@gmail.com</a>
+          </li>
+
+          <li>
+            <a href="tel:+63 930 037 4631" class="call">+63 908 643 3710</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list">
+
+          <p class="footer-list-title title">Subscribe newsletter</p>
+
+          <input type="email" name="email_address" placeholder="Enter your email address" required autocomplete="off"
+            class="input-field">
+
+          <button class="btn btn-primary">Subscribe</button>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <div class="wrapper">
+          
+          <div class="link-wrapper">
+            <a href="#" class="footer-bottom-link">Terms & Conditions</a>
+
+            <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          </div>
+        </div>
+
+        <p class="copyright">
+          &copy; 2024 Jay FxD - Fixed Gear Shop, All Rights Reserved
+        </p>
+
+      </div>
+
+      <img src="./assets/images/jay1.png" width="245" height="165" loading="lazy" alt="fixies"
+        class="shape shape-1">
+
+      <img src="./assets/images/jay1.png" width="138" height="316" loading="lazy" alt="fixies"
+        class="shape shape-2">
+
+      <img src="./assets/images/jay2.png" width="346" height="92" loading="lazy" alt="fixies"
+        class="shape shape-3">
+
+    </div>
+  </footer>
   <script src="./assets/js/script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="./assets/js/shop.js"></script>
+  <script src="./assets/js/cart.js"></script>
 </body>
 </html>
